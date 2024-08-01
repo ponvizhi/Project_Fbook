@@ -1,0 +1,247 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "isAdmin": true,
+      "firstName": "admin",
+      "lastName": "admin",
+      "email": "admin@gmail.com",
+      "dob": "1995-06-29",
+      "gender": "Male",
+      "password": "123",
+      "friends": [
+        2,
+        3
+      ],
+      "profileImageId": "3321"
+    },
+    {
+      "id": "b672",
+      "isAdmin": false,
+      "firstName": "Ponvizhi",
+      "lastName": "Johne",
+      "email": "pon@gmail.com",
+      "dob": "1995-06-29",
+      "gender": "Female",
+      "password": "12345",
+      "friends": [
+        "3b40",
+        "3026"
+      ],
+      "profileImageId": "7994"
+    },
+    {
+      "id": "3b40",
+      "firstName": "Priya",
+      "lastName": "Mohan",
+      "email": "priya@gmail.com",
+      "dob": "1995-06-09",
+      "gender": "Female",
+      "password": "123",
+      "friends": [
+        "b672",
+        "3026"
+      ],
+      "profileImageId": "456"
+    },
+    {
+      "id": "3026",
+      "firstName": "Raj",
+      "lastName": "kamal",
+      "email": "raj@gmail.com",
+      "dob": "1212-12-12",
+      "gender": "Male",
+      "password": "123",
+      "friends": [
+        "b672",
+        "3b40"
+      ],
+      "profileImageId": "4726"
+    },
+    {
+      "id": "72d4",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@gmail.com",
+      "dob": "1212-12-12",
+      "gender": "Male",
+      "password": "123",
+      "friends": [
+        "3026",
+        "ce5f"
+      ],
+      "profileImageId": "8850"
+    },
+    {
+      "id": "979c",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test2@gmail.com",
+      "dob": "1212-12-12",
+      "gender": "Male",
+      "password": "123",
+      "friends": [],
+      "profileImageId": "2985"
+    },
+    {
+      "id": "d24d",
+      "firstName": "test 3",
+      "lastName": "test",
+      "email": "test3@gmail.com",
+      "dob": "1212-12-12",
+      "gender": "Male",
+      "password": "123",
+      "friends": [],
+      "profileImageId": "9650"
+    },
+    {
+      "id": "ce5f",
+      "firstName": "test4",
+      "lastName": "test",
+      "email": "test4@gmail.com",
+      "dob": "1212-12-12",
+      "gender": "Male",
+      "password": "123",
+      "friends": [
+        "3b40",
+        "72d4",
+        "d24d",
+        "b672"
+      ],
+      "profileImageId": "3395"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "content": "Hello World!",
+      "imageId": "9501",
+      "timestamp": "2024-07-16T10:00:00Z"
+    },
+    {
+      "id": "92c5",
+      "userId": "b672",
+      "content": "test",
+      "imageId": "9539",
+      "timestamp": "2024-07-28T12:26:34.707Z"
+    },
+    {
+      "id": "2b65",
+      "userId": "b672",
+      "content": "test",
+      "imageId": "4409",
+      "timestamp": "2024-07-28T12:35:50.689Z"
+    },
+    {
+      "id": "acbb",
+      "userId": "ce5f",
+      "content": "test",
+      "imageId": "7179",
+      "timestamp": "2024-07-29T16:52:25.012Z"
+    },
+    {
+      "id": "970e",
+      "userId": "ce5f",
+      "content": "erwerw lkshdd o creoie ourc peoiqwepoie ouwiouewqieu",
+      "imageId": "9500",
+      "timestamp": "2024-07-29T16:55:41.609Z"
+    }
+  ],
+  "friends": [
+    {
+      "id": "1",
+      "userId": 1,
+      "friendId": 2,
+      "status": "accepted"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "friendId": 3,
+      "status": "pending"
+    }
+  ],
+  "files": [
+    {
+      "id": "1",
+      "type": "image",
+      "url": "/assets/images/face1.jpg"
+    },
+    {
+      "id": "2",
+      "type": "image",
+      "url": "/assets/images/face2.jpg"
+    },
+    {
+      "id": "9539",
+      "type": "image",
+      "url": "/assets/images/1.jpg"
+    },
+    {
+      "id": "4409",
+      "type": "image",
+      "url": "/assets/images/2.jpg"
+    },
+    {
+      "id": "7179",
+      "type": "image",
+      "url": "/assets/images/3.jpg"
+    },
+    {
+      "id": "9500",
+      "type": "image",
+      "url": "/assets/images/4.jpg"
+    },
+    {
+      "id": "9501",
+      "type": "image",
+      "url": "/assets/images/5.jpg"
+    },
+    {
+      "id": "7293",
+      "type": "image",
+      "url": "/assets/images/face7.jpg"
+    },
+    {
+      "id": "456",
+      "type": "image",
+      "url": "/assets/images/face6.jpg"
+    },
+    {
+      "id": "7994",
+      "type": "image",
+      "url": "/assets/images/face6.jpg"
+    },
+    {
+      "id": "3321",
+      "type": "image",
+      "url": "/assets/images/face1.jpg"
+    },
+    {
+      "id": "4726",
+      "type": "image",
+      "url": "/assets/images/face3.jpg"
+    },
+    {
+      "id": "8850",
+      "type": "image",
+      "url": "/assets/images/face2.jpg"
+    },
+    {
+      "id": "2985",
+      "type": "image",
+      "url": "/assets/images/face4.jpg"
+    },
+    {
+      "id": "9650",
+      "type": "image",
+      "url": "/assets/images/face5.jpg"
+    },
+    {
+      "id": "3395",
+      "type": "image",
+      "url": "/assets/images/face7.jpg"
+    }
+  ]
+}

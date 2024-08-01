@@ -1,0 +1,10 @@
+{
+    "/users/register": "/users",
+    "/users/authenticate": "/users",
+    "/users/:id": "/users/:id",
+    "/users/finduserbyemail": "/users",
+    "/users/updateuserphotoId": "/users",
+    "/posts/createpost": "/posts",
+    "/friends/createrequest": "/friends"
+  }
+  

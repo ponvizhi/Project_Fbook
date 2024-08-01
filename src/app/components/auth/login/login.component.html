@@ -1,0 +1,27 @@
+<section class="authsecwrapper">
+    <div class="container">
+        <p class="text-center text-danger fw-bold">{{errorMessage}}</p>
+        <div class="card">
+            <div class="card-header text-center p-4"> 
+                <h1 class="text-clolor-theme fw-bold">FBOOK</h1>
+                <h5 class="text-uppercase">Login</h5> 
+            </div>
+            <div class="card-body p-5">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                    <input type="email" class="form-control" formControlName="email"  placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+                    </div>
+                    <div class="text-center">
+                        <span class="d-block test-small my-3"><a routerLink="/forgot-password" class="text-primary">Forgot Password?</a></span>
+                        <button type="submit"  class="btn btn-theme text-white text-uppercase">Login</button>
+                        <div class="text-center mt-4 font-weight-light"> Don't have an account? <a routerLink="/register" class="text-primary">Create</a>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

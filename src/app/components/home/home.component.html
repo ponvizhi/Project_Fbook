@@ -1,0 +1,46 @@
+<section class="pagesecwrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-8 ps-2 ps-md-4">
+                <div class="card createpost p-4 mb-5">
+                    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                        {{errorMessage}}
+                      </div>
+                      <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                        {{successMessage}}
+                      </div>
+                    <h3 class="text-theme mb-3">Create New Post</h3>
+                    <form [formGroup]="createPostForm" (ngSubmit)="createNewPost()">
+                        <div class="form-group mb-3">
+                            <textarea rows="3" class="form-control" placeholder="Write New Post" formControlName="postContent"></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="file" class="form-control" (change)="onFileChange($event)">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-theme text-white">Post</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="postlistwrapper">
+                    <div class="postlist card mb-4" *ngFor="let post of posts">
+                        <div class="card-body p-4">
+                            <div class="postimage">
+                                <img [src]="post.imageUrl" width="100%" class="rounded">
+                            </div>
+                            <div class="postcontent">
+                                <h3 class="mt-3">{{post.content}}</h3>
+                            </div>
+                        </div>
+                        <div class="card-footer p-3">
+                            <span>{{post.timestamp | date}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

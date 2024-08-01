@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <div class="card p-5">
+        <div class="fbprofilepic text-center">
+            
+            <div *ngIf="profileImageUrl" class="profile-image">
+                <img [src]="profileImageUrl" alt="User Profile Image"/>
+              </div>
+              <div *ngIf="!profileImageUrl" class="profile-image">
+                <img src="https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png">
+              </div>
+            <h4 class="text-center mt-4">{{friendsCount}} Connections</h4>
+            <p class="text-center">{{postCount}} Posts</p>
+            <button type="button" class="btn btn-sm btn-gradient-info" routerLink="/settings">Edit Profile</button>
+        </div>
+    </div>
+</div>

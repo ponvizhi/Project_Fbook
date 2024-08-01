@@ -1,0 +1,40 @@
+.fbprofilepic img{
+    max-width: 160px;
+    margin: auto;
+}.profile-image{
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}.profile-image img{
+    width: 100%;
+    border-radius: 100%;
+}
+.profile-image:before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 109px;
+    height: 109px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background: #ffffff;
+    z-index: -1;
+}.profile-image:after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 115px;
+    height: 115px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#9b55ff), color-stop(38%, white), color-stop(38%, white), color-stop(100%, white), to(white));
+    background: linear-gradient(to right, #9b55ff 0%, white 38%, white 38%, white 100%, white 100%);
+    z-index: -2;
+}

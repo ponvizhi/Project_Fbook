@@ -1,0 +1,15 @@
+.tab-content{
+    max-width: 600px;
+    margin: auto;
+    padding: 35px !important;
+}.nav-link{
+    color: #212529;
+background-color: var(--text-white);
+border:1px solid var(--border-color);
+border-bottom:0;
+border-radius: 10px 10px 0 0;
+padding: 12px 35px;
+}.nav .nav-item button.active {
+    background-color: var(--theme-color);
+    color: #fff !important;
+  }

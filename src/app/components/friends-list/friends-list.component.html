@@ -1,0 +1,33 @@
+<section class="pagesecwrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+             <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-8">
+                <div *ngIf="friendsList && friendsList.length; else noFriends"></div>
+                <div class="row">
+                    <div class="col-md-6 mb-4" *ngFor="let friend of friendsList">
+                        <div class="userlist card p-4 d-block text-center" >
+                             <div *ngIf="friend.profileImageUrl" class="profile-image">
+                                <img [src]="friend.profileImageUrl" alt="User Profile Image" class="rounded-circle"/>
+                              </div>
+                              <div *ngIf="!friend.profileImageUrl" class="profile-image">
+                                <img src="https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png" width="100px">
+                              </div>
+                            <h6 class="mt-3 mb-2 text-uppercase font-weight-medium">{{friend.firstName}} {{friend.lastName}}</h6>
+                            <span class="d-block mb-0 text-muted">{{friend.friends.length}} Connection</span>
+                            <span class="d-block mb-0 text-muted">{{friend.postCount}} Posts</span>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #noFriends>
+                    <div class="p-3 text-center">
+                        <p>You have no friends yet.</p>
+                        <button class="btn btn-theme text-white" (click)="toNetwork()">Search Friends</button>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>

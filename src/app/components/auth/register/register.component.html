@@ -1,0 +1,74 @@
+<section class="authsecwrapper">
+    <div class="container">
+        <p class="text-center text-danger fw-bold"></p>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
+          <div *ngIf="successMessage" class="alert alert-success" role="alert">
+            {{successMessage}}
+          </div>
+        <div class="card">
+            <div class="card-header text-center p-4"> 
+                <h1 class="text-clolor-theme fw-bold">FBOOK</h1>
+                <h5 class="text-uppercase">Registration</h5> 
+            </div>
+            <div class="card-body p-5">
+                <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+                                <span class="text-danger" 
+                                *ngIf="registerForm.get('firstName')?.errors?.['required'] && (registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty)"
+                                >Name is  Required</span>
+                                </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+                                <span class="text-danger" 
+                                *ngIf="registerForm.get('lastName')?.errors?.['required'] && (registerForm.get('lastName')?.touched || registerForm.get('lastName')?.dirty)"
+                                >Last Name Required</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                    <span class="text-danger" 
+                    *ngIf="registerForm.get('email')?.errors?.['required'] && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)"
+                    >Email Required</span>
+                    <span class="text-danger" *ngIf="registerForm.get('email')?.errors?.['email'] && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)">
+                        Invalid Email
+                      </span>
+                    </div>
+                    <div class="form-group">
+                    <input type="date" class="form-control" placeholder="DOB" formControlName="dob">
+                    <span class="text-danger" 
+                    *ngIf="registerForm.get('dob')?.errors?.['required'] && (registerForm.get('dob')?.touched || registerForm.get('dob')?.dirty)"
+                    >Date of Birth is Required</span>
+                    </div>
+                    <div class="form-group">
+                    <select class="form-control" formControlName="gender">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span class="text-danger" 
+                    *ngIf="registerForm.get('gender')?.errors?.['required'] && (registerForm.get('gender')?.touched || registerForm.get('gender')?.dirty)"
+                    >Gender is Required</span>
+                    </div>
+                    <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                    <span class="text-danger" 
+                    *ngIf="registerForm.get('password')?.errors?.['required'] && (registerForm.get('password')?.touched || registerForm.get('password')?.dirty)"
+                    > Password is Required</span>
+                    </div>
+                    <div class="text-center">
+                    <button type="submit"  class="btn btn-theme text-white">Register</button>
+                    <span class="d-block test-small mt-3">Already have an account? <a routerLink="/login" class="text-primary">Login Now</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
