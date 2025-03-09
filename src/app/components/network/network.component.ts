@@ -36,7 +36,7 @@ export class NetworkComponent {
             error: (error) => {
               console.log(`Error fetching image metadata for profileImageId ${user.profileImageId}`, error);
             }
-          });
+          }); 
   
           // Initializing post count to zero for each user
           user.postCount = 0;

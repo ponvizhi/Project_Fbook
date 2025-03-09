@@ -33,21 +33,39 @@ export class PostService {
     return this.http.get<any>(`${baseUrl}files/${id}`);
   }
  
-  simulateImageUpload(file: File): Observable<any> {
-    // Generate a new ID for the image
-    const newImageId = Math.floor(Math.random() * 10000).toString();
-    const imageUrl = `/assets/images/${file.name}`;
+  // simulateImageUpload(file: File): Observable<any> {
+  //   // Generate a new ID for the image
+  //   const newImageId = Math.floor(Math.random() * 10000).toString();
+  //   const imageUrl = `/assets/images/${file.name}`;
 
-    // Simulate adding the image metadata to the files endpoint
-    return this.http.get<any[]>(`${baseUrl}files`).pipe(
-      mergeMap(files => {
-        const updatedFiles = [...files, { id: newImageId, type: 'image', url: imageUrl }];
-        return this.http.post(`${baseUrl}files`, { id: newImageId, type: 'image', url: imageUrl }).pipe(
-          map(() => ({ id: newImageId, url: imageUrl }))
-        );
-      })
+  //   // Simulate adding the image metadata to the files endpoint
+  //   return this.http.get<any[]>(`${baseUrl}files`).pipe(
+  //     mergeMap(files => {
+  //       const updatedFiles = [...files, { id: newImageId, type: 'image', url: imageUrl }];
+  //       return this.http.post(`${baseUrl}files`, { id: newImageId, type: 'image', url: imageUrl }).pipe(
+  //         map(() => ({ id: newImageId, url: imageUrl }))
+  //       );
+  //     })
+  //   );
+  // }
+
+  simulateImageUpload(imageUrl: string): Observable<any> {
+    const newImageId = Math.floor(Math.random() * 10000).toString();
+    const newFileMetadata = {
+        id: newImageId,
+        type: 'image',
+        url: imageUrl
+    };
+
+    console.log('Sending Metadata:', newFileMetadata);
+
+    return this.http.post(`${baseUrl}files`, newFileMetadata).pipe(
+        map(response => {
+            console.log('Response:', response);
+            return { id: newImageId, url: imageUrl };
+        })
     );
-  }
+}
 
   addNewPost(postData: any): Observable<any> {
     return this.http.post<any>(baseUrl + 'posts', postData, httpHeaders);

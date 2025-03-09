@@ -1,4 +1,4 @@
-<section class="p-5">
+<section class="pagesecwrapper">
     <div class="container">
         <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
             {{errorMessage}}
@@ -38,7 +38,7 @@
                             <label class="text-black">Email</label>
                             <input type="text" class="form-control" formControlName="email">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 profileimg">
                             <label class="text-black">Profile Image</label>
                             <div *ngIf="profileImageUrl">
                                 <img [src]="profileImageUrl" alt="User Profile Image" width="100px" class="img-sm rounded-circle mb-3"/>
@@ -46,7 +46,8 @@
                               <div *ngIf="!profileImageUrl">
                                 <p>No profile image available</p>
                               </div>
-                            <input type="file" class="form-control" (change)="onFileChange($event)">
+                            <!-- <input type="file" class="form-control" (change)="onFileChange($event)"> -->
+                            <input type="text" class="form-control" placeholder="Image URL" formControlName="profileImageUrl">
                         </div>
                         <div class="text-center mt-3">
                             <button class="btn btn-theme text-white" type="submit">Save</button>

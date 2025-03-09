@@ -8,7 +8,7 @@
       "email": "admin@gmail.com",
       "dob": "1995-06-29",
       "gender": "Male",
-      "password": "123",
+      "password": "123456",
       "friends": [
         2,
         3
@@ -28,7 +28,7 @@
         "3b40",
         "3026"
       ],
-      "profileImageId": "7994"
+      "profileImageId": "2"
     },
     {
       "id": "3b40",
@@ -109,6 +109,78 @@
         "b672"
       ],
       "profileImageId": "3395"
+    },
+    {
+      "id": "b082",
+      "firstName": "kayal",
+      "lastName": "john",
+      "email": "kayal@gmail.com",
+      "dob": "1995-02-09",
+      "gender": "Female",
+      "password": "123",
+      "friends": [
+        "b672",
+        "d24d",
+        "ce5f"
+      ],
+      "profileImageId": "6491"
+    },
+    {
+      "id": "09b8",
+      "firstName": "test",
+      "lastName": "5",
+      "email": "test5@gmail.com",
+      "dob": "2014-06-09",
+      "gender": "Male",
+      "password": "12345",
+      "friends": [
+        "b672",
+        "3b40"
+      ],
+      "profileImageId": "6890"
+    },
+    {
+      "firstName": "pon",
+      "lastName": "John",
+      "email": "pon@gmail.com",
+      "phoneNo": "",
+      "dob": "1212-12-12",
+      "gender": "",
+      "username": "pon",
+      "role": "user",
+      "country": "",
+      "state": "",
+      "profileStatus": "active",
+      "password": "123456",
+      "id": "5e29",
+      "userProfileImageUrl": "https://picsum.photos/id/237/200/300",
+      "userPost": [
+        {
+          "text": "dadsad",
+          "imageUrl": "https://picsum.photos/id/237/200/300",
+          "postTime": "2024-09-04T16:36:12.592Z",
+          "userPostId": 1
+        }
+      ],
+      "userConnectionReq": [],
+      "acceptedUserFriends": [],
+      "rejectedUserFriends": [],
+      "cancelledUserFriends": []
+    },
+    {
+      "id": "e1dc",
+      "firstName": "pon",
+      "lastName": "vizhi",
+      "email": "ponvizhi@gmail.com",
+      "dob": "2000-12-12",
+      "gender": "Female",
+      "password": "Test",
+      "friends": [
+        "b672",
+        "3b40",
+        "3026"
+      ],
+      "profileImageId": "667"
     }
   ],
   "posts": [
@@ -146,6 +218,34 @@
       "content": "erwerw lkshdd o creoie ourc peoiqwepoie ouwiouewqieu",
       "imageId": "9500",
       "timestamp": "2024-07-29T16:55:41.609Z"
+    },
+    {
+      "id": "1c09",
+      "userId": "b672",
+      "content": "Static Random Image",
+      "imageId": "3125",
+      "timestamp": "2024-09-03T16:54:01.974Z"
+    },
+    {
+      "id": "2b49",
+      "userId": "b082",
+      "content": "Static Random Image",
+      "imageId": "9648",
+      "timestamp": "2024-09-03T17:03:33.943Z"
+    },
+    {
+      "id": "6803",
+      "userId": "09b8",
+      "content": "You may combine any of the options above.",
+      "imageId": "3217",
+      "timestamp": "2024-09-04T16:09:59.288Z"
+    },
+    {
+      "id": "08db",
+      "userId": "e1dc",
+      "content": "test",
+      "imageId": "9351",
+      "timestamp": "2025-03-09T11:01:38.484Z"
     }
   ],
   "friends": [
@@ -242,6 +342,66 @@
       "id": "3395",
       "type": "image",
       "url": "/assets/images/face7.jpg"
+    },
+    {
+      "id": "3125",
+      "type": "image",
+      "url": "https://picsum.photos/id/77/450/300"
+    },
+    {
+      "id": "983",
+      "type": "image",
+      "url": "https://picsum.photos/seed/picsum/450/300"
+    },
+    {
+      "id": "9648",
+      "type": "image",
+      "url": "https://picsum.photos/seed/picsum/450/300"
+    },
+    {
+      "id": "6491",
+      "type": "image",
+      "url": "https://picsum.photos/seed/picsum/450/300"
+    },
+    {
+      "id": "1250",
+      "type": "image",
+      "url": "https://picsum.photos/id/237/200/300"
+    },
+    {
+      "id": "1068",
+      "type": "image",
+      "url": "1250"
+    },
+    {
+      "id": "4380",
+      "type": "image",
+      "url": "1250"
+    },
+    {
+      "id": "750",
+      "type": "image",
+      "url": "https://picsum.photos/id/237/200/300"
+    },
+    {
+      "id": "6890",
+      "type": "image",
+      "url": "https://picsum.photos/id/237/200/300"
+    },
+    {
+      "id": "3217",
+      "type": "image",
+      "url": "https://picsum.photos/seed/picsum/200/300"
+    },
+    {
+      "id": "667",
+      "type": "image",
+      "url": "https://picsum.photos/id/237/200/300"
+    },
+    {
+      "id": "9351",
+      "type": "image",
+      "url": "https://picsum.photos/seed/picsum/450/300"
     }
   ]
 }

@@ -1,6 +1,6 @@
 <section class="authsecwrapper">
     <div class="container">
-        <p class="text-center text-danger fw-bold">{{errorMessage}}</p>
+        <div *ngIf="errorMessage" class="alert alert-danger text-center" role="alert">{{errorMessage}}</div>
         <div class="card">
             <div class="card-header text-center p-4"> 
                 <h1 class="text-clolor-theme fw-bold">FBOOK</h1>

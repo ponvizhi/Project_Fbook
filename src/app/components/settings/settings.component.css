@@ -12,4 +12,8 @@ padding: 12px 35px;
 }.nav .nav-item button.active {
     background-color: var(--theme-color);
     color: #fff !important;
+  }.profileimg img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }

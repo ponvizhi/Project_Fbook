@@ -142,7 +142,7 @@ addFriend(userId: string, currentUserId: string): Observable<any> {
 // Fetch image metadata based on image ID
 getImageMetadata(imageId: string): Observable<any> {
   return this.http.get<any>(`${this.baseURL}files/${imageId}`);
-}
+} 
 
 // Fetch image URL based on user ID
 getProfileImageUrl(): Observable<string> {
@@ -157,7 +157,7 @@ getProfileImageUrl(): Observable<string> {
     map(imageMetadata => {
       // console.log('Image Metadata:', imageMetadata); // Debugging
       return imageMetadata.url;
-    }),
+    }), 
     catchError(() => of('/assets/images/default-profile.png')) // Handle errors
   );
 }

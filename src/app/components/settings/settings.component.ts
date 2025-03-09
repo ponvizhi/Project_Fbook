@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs/internal/observable/of';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from 'src/app/services/post.service';
 import { UserService } from 'src/app/services/user.service';
@@ -30,7 +32,7 @@ export class SettingsComponent {
       gender: [''],
       dob: [''],
       email: [''],
-      profileImage: [null] 
+      profileImageUrl: [''] 
     });
 
     //reset password
@@ -55,7 +57,7 @@ export class SettingsComponent {
         gender: currentUser.gender,
         dob: currentUser.dob,
         email: currentUser.email,
-        profileImageUrl : currentUser.profileImageId
+        profileImageUrl : currentUser.profileImageUrl
       })
     }
   }
@@ -73,12 +75,19 @@ export class SettingsComponent {
   onSave(): void {
     if (this.userForm.valid) {
       this.errorMessage = '';
-      const updatedUser = { ...this.authService.getCurrentUserSession(), ...this.userForm.value };
-      
-      // Simulate image upload
-      this.postService.simulateImageUpload(this.userForm.value.profileImage).subscribe({
+      const formValue = this.userForm.value;
+  
+      // Simulate image upload if profileImageUrl is provided
+      let imageUploadObservable: Observable<any> = of({ id: null, url: formValue.profileImageUrl });
+  
+      if (formValue.profileImageUrl) {
+        imageUploadObservable = this.postService.simulateImageUpload(formValue.profileImageUrl);
+      }
+  
+      imageUploadObservable.subscribe({
         next: (imageResponse) => {
-          // Update user profile with the image ID
+          const updatedUser = { ...this.authService.getCurrentUserSession(), ...this.userForm.value };
+          
           const userData = {
             firstName: updatedUser.firstName,
             lastName: updatedUser.lastName,
@@ -116,6 +125,54 @@ export class SettingsComponent {
       this.errorMessage = 'Please fill out all required fields.';
     }
   }
+  
+
+  // onSave(): void {
+  //   if (this.userForm.valid) {
+  //     this.errorMessage = '';
+  //     const updatedUser = { ...this.authService.getCurrentUserSession(), ...this.userForm.value };
+      
+  //     // Simulate image upload
+  //     this.postService.simulateImageUpload(this.userForm.value.profileImage).subscribe({
+  //       next: (imageResponse) => {
+  //         // Update user profile with the image ID
+  //         const userData = {
+  //           firstName: updatedUser.firstName,
+  //           lastName: updatedUser.lastName,
+  //           gender: updatedUser.gender,
+  //           dob: updatedUser.dob,
+  //           email: updatedUser.email,
+  //           profileImageId: imageResponse.id // Use the simulated image ID
+  //         };
+  
+  //         // Update in session storage
+  //         this.authService.storeToken({ user: { ...updatedUser, ...userData } });
+  
+  //         // Update in backend
+  //         this.http.patch(`http://localhost:3000/users/${updatedUser.id}`, userData).subscribe({
+  //           next: (response) => {
+  //             this.successMessage = 'Profile Updated Successfully!';
+  //             this.getUserProfileImage();
+  //             setTimeout(() => {
+  //               this.successMessage = '';
+  //             }, 2000);
+  //           },
+  //           error: (error) => {
+  //             this.errorMessage = 'Error updating profile. Please try again later.';
+  //             console.error('Error updating user info', error);
+  //           }
+  //         });
+  //       },
+  //       error: (error) => {
+  //         this.errorMessage = 'Error uploading image. Please try again later.';
+  //         console.error('Error uploading image', error);
+  //       }
+  //     });
+  //   } else {
+  //     this.userForm.markAllAsTouched();
+  //     this.errorMessage = 'Please fill out all required fields.';
+  //   }
+  // }
   
 
   passwordMatchValidator(form: FormGroup){
